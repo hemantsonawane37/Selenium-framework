@@ -1,0 +1,19 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+
+<suite parallel="tests" thread-count="5" name="Authentication" verbose="1">
+    <listeners>
+        <listener class-name="liseners.Lisener"></listener>
+    </listeners>
+    <test name="RegisterUser">
+        <classes>
+            <class name="tests.pages.CreateUserAccountPage">
+                <methods>
+                    <include name="CreateAccountWithPositiveData"></include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+</suite>
+
