@@ -31,9 +31,8 @@ public class CreateUserAccountPage {
         createAccountPage.EnterPassword(inputs.get("password"));
         createAccountPage.EnterConfirmPassword(inputs.get("confirmpassword"));
         String StrongPasswordMsg = createAccountPage.GetPasswordStrengthMsg();
-        Assert.assertEquals(inputs.get("confirmpasswordmessage"), StrongPasswordMsg);
+        Assert.assertEquals(StrongPasswordMsg,inputs.get("confirmpasswordmessage"));
         createAccountPage.ClickOnCreateAccountButton();
-
 
     }
 

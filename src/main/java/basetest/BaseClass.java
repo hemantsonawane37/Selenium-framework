@@ -22,11 +22,11 @@ public class BaseClass {
 
     public static WebDriver launchBrowser() throws IOException {
 
-        String Browser = "Browser";
 
         GlobalData = GetPropertiesObjects();
+        String Browser = System.getProperty("Browser") != null ? System.getProperty("Browser") : GlobalData.getProperty("Browser");
 
-        switch (GlobalData.getProperty(Browser).trim()) {
+        switch (Browser.trim()) {
             case "Chrome":
             case "chrome":
                 ChromeOptions chromeoptions = new ChromeOptions();
@@ -52,11 +52,13 @@ public class BaseClass {
     }
 
     public static Properties GetPropertiesObjects() throws IOException {
+
         String PropertiesFilepath = "/src/test/java/properties/GLOBALDATA.properties";
         Properties prop = new Properties();
         FileInputStream globeldata = new FileInputStream(System.getProperty("user.dir") + PropertiesFilepath);
         prop.load(globeldata);
         return prop;
+
     }
 
     public static void TakeScreenShot(String path) throws IOException {
