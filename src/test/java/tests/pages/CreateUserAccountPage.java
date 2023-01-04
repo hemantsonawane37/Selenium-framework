@@ -38,7 +38,7 @@ public class CreateUserAccountPage {
 
     @DataProvider(name = "CreateAccountData")
     public Object[][] CreateAccountData() throws IOException {
-        this.testData = new TestData(GetPropertiesObjects().getProperty("TestDataPath"));
+        this.testData = new TestData(GetPropertiesObjects().getProperty("TestDataPath"),"test data");
         HashMap<String, String> map = testData.getTestDataFromExcel(new String[]{"firstname", "lastname", "email", "password", "confirmpassword", "confirmpasswordmessage"});
         return new Object[][]{{map}};
     }

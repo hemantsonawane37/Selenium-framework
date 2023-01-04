@@ -6,7 +6,7 @@ import java.util.HashMap;
 
 public class Temtest extends BaseClass {
     public static void main(String[] args) throws IOException {
-        TestData testData = new TestData("C:\\Users\\hemant\\OneDrive\\Documents\\Luma.xlsx");
+        TestData testData = new TestData("C:\\Users\\hemant\\OneDrive\\Documents\\Luma.xlsx","test data");
         HashMap<String, String> map = testData.getTestDataFromExcel(new String[]{"firstname", "lastname", "email","password","confirmpassword"});
         Object[][] obj = new Object[][]{{map}};
 

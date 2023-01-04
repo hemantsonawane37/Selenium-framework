@@ -16,9 +16,12 @@ import static basetest.BaseClass.GetPropertiesObjects;
 public class TestData {
 
     private String Path = "";
+    private  String SheetName ;
+    private final String TestCaseIdParam = "testcaseid";
     private XSSFWorkbook workbook;
 
-    public TestData(String path) throws IOException {
+    public TestData(String path,String sheetName) throws IOException {
+        this.SheetName = sheetName;
         if (!this.Path.equals(path)) {
             this.Path = path;
             File file = new File(this.Path);
@@ -28,10 +31,10 @@ public class TestData {
     }
 
     public HashMap<String, String> getTestDataFromExcel(String[] columns) throws IOException {
-        XSSFSheet sheet = workbook.getSheet("test data");
+        XSSFSheet sheet = workbook.getSheet(SheetName);
         Iterator<Row> rowIterator = sheet.iterator();
         Iterator<Cell> headings = sheet.getRow(0).cellIterator();
-        String testcaseidgloble = GetPropertiesObjects().getProperty("testcaseid");
+        String testcaseidgloble = System.getProperty(TestCaseIdParam) != null ? System.getProperty(TestCaseIdParam) : GetPropertiesObjects().getProperty("testcaseid");
         HashMap<String, String> hashMap = new HashMap<>();
 
 
