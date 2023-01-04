@@ -2,16 +2,16 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-01-03T16:38:28 IST" name="Authentication" finished-at="2023-01-03T16:38:37 IST" duration-ms="8859">
+  <suite started-at="2023-01-04T14:02:56 IST" name="Authentication" finished-at="2023-01-04T14:03:06 IST" duration-ms="9593">
     <groups>
     </groups>
-    <test started-at="2023-01-03T16:38:28 IST" name="RegisterUser" finished-at="2023-01-03T16:38:37 IST" duration-ms="8859">
+    <test started-at="2023-01-04T14:02:56 IST" name="RegisterUser" finished-at="2023-01-04T14:03:06 IST" duration-ms="9593">
       <class name="tests.pages.CreateUserAccountPage">
-        <test-method is-config="true" signature="LaunchingBrowser()[pri:0, instance:tests.pages.CreateUserAccountPage@6e9a5ed8]" started-at="2023-01-03T16:38:30 IST" name="LaunchingBrowser" finished-at="2023-01-03T16:38:32 IST" duration-ms="2782" status="PASS">
+        <test-method is-config="true" signature="LaunchingBrowser()[pri:0, instance:tests.pages.CreateUserAccountPage@6c284af]" started-at="2023-01-04T14:02:58 IST" name="LaunchingBrowser" finished-at="2023-01-04T14:03:01 IST" duration-ms="3135" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- LaunchingBrowser -->
-        <test-method signature="CreateAccountWithPositiveData(java.util.HashMap)[pri:0, instance:tests.pages.CreateUserAccountPage@6e9a5ed8]" started-at="2023-01-03T16:38:32 IST" name="CreateAccountWithPositiveData" data-provider="CreateAccountData" finished-at="2023-01-03T16:38:36 IST" duration-ms="4020" status="PASS">
+        <test-method signature="CreateAccountWithPositiveData(java.util.HashMap)[pri:0, instance:tests.pages.CreateUserAccountPage@6c284af]" started-at="2023-01-04T14:03:01 IST" name="CreateAccountWithPositiveData" data-provider="CreateAccountData" finished-at="2023-01-04T14:03:06 IST" duration-ms="4550" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -22,7 +22,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CreateAccountWithPositiveData -->
-        <test-method is-config="true" signature="Closing()[pri:0, instance:tests.pages.CreateUserAccountPage@6e9a5ed8]" started-at="2023-01-03T16:38:36 IST" name="Closing" finished-at="2023-01-03T16:38:37 IST" duration-ms="493" status="PASS">
+        <test-method is-config="true" signature="Closing()[pri:0, instance:tests.pages.CreateUserAccountPage@6c284af]" started-at="2023-01-04T14:03:06 IST" name="Closing" finished-at="2023-01-04T14:03:06 IST" duration-ms="273" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Closing -->

@@ -8,40 +8,40 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.edge.EdgeOptions;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.pages.LandingPage;
 
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.net.URL;
 import java.util.Properties;
 
 public class BaseClass {
 
     static WebDriver driver;
     static Properties GlobalData;
-
     public static WebDriver launchBrowser() throws IOException {
 
-
+       final String Chrome = "chrome";
+       final String Edge = "edge";
         GlobalData = GetPropertiesObjects();
         String Browser = System.getProperty("Browser") != null ? System.getProperty("Browser") : GlobalData.getProperty("Browser");
+        Browser = Browser.trim();
 
-        switch (Browser.trim()) {
-            case "Chrome":
-            case "chrome":
-                ChromeOptions chromeoptions = new ChromeOptions();
-                chromeoptions.setPlatformName("Windows 10");
-                chromeoptions.setBrowserVersion("107");
-                driver = new ChromeDriver(chromeoptions);
-                break;
-            case "Edge":
-            case "edge":
-                EdgeOptions edgeOptionsoptions = new EdgeOptions();
-                edgeOptionsoptions.setPlatformName("Windows 10");
-                edgeOptionsoptions.setBrowserVersion("107.0.1418.42");
-                driver = new EdgeDriver(edgeOptionsoptions);
-                break;
-        }
+        DesiredCapabilities caps = new DesiredCapabilities();
+
+
+       if(Browser.equalsIgnoreCase(Chrome)){
+           caps.setBrowserName(Browser);
+               driver = new RemoteWebDriver(new URL("http://localhost:4444"),caps);
+
+       } else if (Browser.equalsIgnoreCase(Edge)) {
+           caps.setBrowserName(Edge);
+           driver = new RemoteWebDriver(new URL("http://localhost:4444"),caps);
+       }
+
         driver.manage().window().maximize();
         return driver;
     }
